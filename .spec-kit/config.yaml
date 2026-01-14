@@ -1,0 +1,105 @@
+project:
+  name: "Todo App - Hackathon II Phase II"
+  version: "2.0.0"
+  phase: "Phase II - Full-Stack Web Application"
+
+spec_system:
+  version: "1.0"
+  root_dir: "specs"
+
+  directories:
+    features: "specs/features"
+    api: "specs/api"
+    database: "specs/database"
+    ui: "specs/ui"
+
+  required_files:
+    - "specs/overview.md"
+
+  validation:
+    require_approval: true
+    enforce_spec_first: true
+
+agents:
+  spec_architect:
+    enabled: true
+    auto_validate: true
+
+  architecture_planner:
+    enabled: true
+    scope: "system-wide"
+
+  nextjs_frontend_engineer:
+    enabled: true
+    scope: "frontend"
+    requires_approved_specs: true
+
+  fastapi_backend_engineer:
+    enabled: true
+    scope: "backend"
+    requires_approved_specs: true
+
+  integration_tester:
+    enabled: true
+    scope: "end-to-end"
+    runs_after: ["nextjs_frontend_engineer", "fastapi_backend_engineer"]
+
+workflow:
+  phases:
+    - name: "Specification"
+      required: true
+      outputs: ["specs/**/*.md"]
+
+    - name: "Planning"
+      required: true
+      depends_on: ["Specification"]
+
+    - name: "Implementation"
+      required: true
+      depends_on: ["Planning"]
+      agents: ["nextjs_frontend_engineer", "fastapi_backend_engineer"]
+
+    - name: "Integration Testing"
+      required: true
+      depends_on: ["Implementation"]
+      agents: ["integration_tester"]
+
+technology_stack:
+  frontend:
+    framework: "Next.js 16+"
+    router: "App Router"
+    language: "TypeScript"
+    styling: "Tailwind CSS"
+    auth: "Better Auth (JWT mode)"
+
+  backend:
+    framework: "FastAPI"
+    language: "Python 3.12+"
+    orm: "SQLModel"
+    validation: "Pydantic v2"
+    jwt: ["PyJWT", "python-jose"]
+
+  database:
+    provider: "Neon Serverless PostgreSQL"
+    type: "PostgreSQL"
+
+  deployment:
+    frontend: "Vercel"
+    backend: "Render/Fly.io/DigitalOcean"
+
+security:
+  authentication: "JWT"
+  authorization: "User-based ownership"
+  data_isolation: "Strict per-user filtering"
+
+standards:
+  naming:
+    database: "snake_case"
+    api: "camelCase"
+    urls: "kebab-case"
+    env_vars: "SCREAMING_SNAKE_CASE"
+    components: "PascalCase"
+
+  code_style:
+    python: ["black", "isort", "ruff"]
+    typescript: ["eslint", "prettier"]

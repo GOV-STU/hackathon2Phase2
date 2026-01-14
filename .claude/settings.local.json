@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm init -y)",
+      "Bash(npm run build)",
+      "Bash(curl:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(python -m json.tool)",
+      "Bash(python:*)",
+      "Bash(timeout 5 cmd /c \"ping 127.0.0.1 -n 6 > nul\")",
+      "Bash(tasklist)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run dev)",
+      "Bash(timeout 10 bash -c \"until curl -s http://localhost:3000 > /dev/null 2>&1; do sleep 1; done && echo ''Frontend is ready''\")",
+      "Bash(timeout:*)",
+      "Bash(pkill:*)",
+      "Bash(pip install:*)",
+      "Bash(uvicorn:*)",
+      "Bash(TOKEN=\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0MGM2MjhlMS02YTgxLTRhMGQtYWFlMC0wZTNjZGI0NzYwNDMiLCJlbWFpbCI6ImRlbW9AZXhhbXBsZS5jb20iLCJleHAiOjE3Njg5NzE0OTB9.a6QEgr5vqMkg94CNF9oSS3EU-QEwz1vjt_GouQf-Kaw\")",
+      "Bash(tree:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

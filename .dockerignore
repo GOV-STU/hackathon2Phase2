@@ -1,0 +1,105 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+ENV/
+env/
+
+# Node.js (for frontend)
+frontend/node_modules/
+frontend/.next/
+frontend/build/
+frontend/dist/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.turbo/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+server.log
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+todo_app.db
+
+# Environment files (security)
+.env
+.env.local
+.env.example
+.env.backup
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# Development artifacts
+tmpclaude-*
+nul
+test_*.py
+test_*.js
+reset_db.py
+
+# Documentation (keep only essential)
+README.md
+IMPLEMENTATION_SUMMARY.md
+CONSTITUTION.md
+CLAUDE.md
+DOCKER.md
+HUGGINGFACE_DEPLOYMENT.md
+specs/
+.spec-kit/
+
+# Root files not needed in Docker
+docker-compose.yml
+Dockerfile.hf  # We use Dockerfile
+app.py  # Optional, not needed if using Dockerfile.hf as Dockerfile
+
+# GitHub
+.github/
+
+# Scripts
+scripts/
+
+# Configuration files
+*.yaml
+*.yml
+!backend/requirements.txt

@@ -1,0 +1,35 @@
+# Hugging Face Space Configuration
+# This file helps configure your Space
+
+title: "Todo App API - Phase II"
+description: "Secure multi-user Todo application API with JWT authentication"
+
+# Application SDK (required for Docker spaces)
+sdk: docker
+
+# Python version (if using Python SDK)
+# python_version: "3.11"
+
+# Hardware (optional - choose based on needs)
+# hardware: cpu-small  # or cpu-basic, t4-small, a10g-small, etc.
+
+# Environment variables needed (user will need to set these in Space settings)
+# - DB_PASSWORD: Database password
+# - JWT_SECRET: JWT signing secret
+# - BETTER_AUTH_SECRET: Better Auth secret
+
+# Tags for discoverability
+tags:
+  - api
+  - fastapi
+  - authentication
+  - todo-app
+  - jwt
+  - python
+  - docker
+
+# Cover image (optional)
+# cover: https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hub/spaces-hero.png
+
+# SDK version
+sdk_version: 0.11.0  # or latest
